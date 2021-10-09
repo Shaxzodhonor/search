@@ -48,7 +48,7 @@ var render = function(array) {
         elIframe.src = 'https://www.youtube.com/embed/'+ movie.ytid;
         var iconWrap = createElement('div', 'youtube-icon d-flex align-items-center justify-content-center', '',wrappIframe);
         var iconYouTube = createElement('img', '', '', iconWrap);
-        iconYouTube.src = './img/youtube-icon.svg';
+        iconYouTube.src = "./img/youtube-icon.svg";
         iconYouTube.setAttribute('width', '80');
         iconYouTube.setAttribute('height', '65');
         var cardContentWrap = createElement('div', 'p-2', '', elCard)
