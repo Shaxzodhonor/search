@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/movies.css">
+</head>
+<body>
+    <h1 class="h1 text-center  bg-danger mb-3 p-3"><span class="text-warning">SHAX TuBE</span> Movies</h1>
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-8  border-end border-3">
+                <form action="" method="POST" class="js-form">
+                    <div class="mb-4">
+                        <input class="w-50 rounded-pill p-3 js-search" type="search" name="search_movie" id="search-movie-id" placeholder="search" autocomplete="off">
+                    </div>
+                </form>
+                <div>
+                    <iframe class="full-screen-iframe"  width="700" height="400" src="https://www.youtube.com/embed/8FSF-Ua1S_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="my-3 border-top b0rder-3 pt-3 w-75">
+                    <div class="h4">Title : <span class="js-title">Dasturchilar qancha maosh oladi?!</span></div>
+                    <div class="text-danger">IMDB Rating : <span class="js-imdb">-</span></div>
+                    <div>Language : <span class="js-language"> O'zbek</span></div>
+                    <div>Year : <span class="js-year"> 2019</span></div>
+                </div>
+                <div class="border w-75">
+                    <div class="h4 mt-4">SUMMARY:</div>
+                    <div class="js-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus repellat accusamus saepe voluptatum sequi expedita et facilis. Asperiores doloribus fugiat enim delectus necessitatibus illum ipsam nesciunt odio quam explicabo!</div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="js-wrapper">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./js/movies.js"></script>
+    <script src="./js/utility.js"></script>
+    <script src="./js/moviesFunc.js"></script>
+</body>
+</html>
