@@ -9,35 +9,8 @@ var wrapp = $_('.js-wrapper');
 var elForm = $_('.js-form');
 var elInput = $_('.js-search');
 
-var normalizedMoviess = moviess.map(function (movie) {
-    return {
-        title: movie.Title.toString(),
-        year: movie.movie_year,
-        categories: movie.Categories.split('|').join(', '),
-        imdbRating: movie.imdb_rating,
-        language: movie.language,
-        ytid: movie.ytid,
-        summary: movie.summary,
-        youtubeId: `https://www.youtube.com/watch?v=${movie.ytid}`,
-    };
-});
-
-var normalizedMovies = movies.map(function (movie) {
-    return {
-        title: movie.Title.toString(),
-        year: movie.movie_year,
-        categories: movie.Categories.split('|').join(', '),
-        imdbRating: movie.imdb_rating,
-        language: movie.language,
-        ytid: movie.ytid,
-        youtubeId: `https://www.youtube.com/watch?v=${movie.ytid}`,
-        summary: movie.summary,
-    };
-});
-
-
-
-
+var fullsd = window.location.search.slice(4);
+fullScreen.src = 'https://www.youtube.com/embed/'+ fullsd + '?autoplay=1';  
 var render = function(array) {
 
     wrapp.innerHTML = '';
@@ -59,7 +32,7 @@ var render = function(array) {
 
         elCard.addEventListener('click', function() {
             window.scrollTo(0, 1);
-            fullScreen.src = 'https://www.youtube.com/embed/'+ movie.ytid;  
+            fullScreen.src = 'https://www.youtube.com/embed/'+ movie.ytid + '?autoplay=1';  
             fullScreenTitle.textContent = movie.title;
             fullScreenLanguage.textContent = movie.language;
             fullScreenYear.textContent = movie.year
@@ -83,21 +56,23 @@ var searchMovies = function (evt) {
     var searchReg = elInput.value.trim();
     var searchRegex = new RegExp(searchReg, 'gi');
 
-    var moviesSearch = normalizedMoviess.filter(function (movie) {
-        return movie.title.match(searchRegex);
-    });
-
     if (elInput.value.trim() === "") {
         elInput.value = "";
         elInput.focus();
         alert('Kinoni nomini yozing!');
         return;
     } 
+    if (searchReg.length <= 1) {
+        return
+    }
+
+    var moviesSearch = normalizedMovies.filter(function (movie) {
+        return movie.title.match(searchRegex);
+    });
+
     render(moviesSearch);
 };
 
 elForm.addEventListener('submit', searchMovies);
 
-render(normalizedMovies);
-
-console.log(document.createDocumentFragment());
+render(normalizedMoviesLittle); 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/movies.css">
+</head>
+<body>
+    <h1 class="bg-danger text-center p-4">Watch list of movies</h1>
+
+
+
+<form action="" class="js-form-list" style="position: relative;">
+    <div class="d-flex justify-content-center bg-secondary p-3">
+        <input type="search" class="js-search-input form-control w-25 rounded-3" placeholder="search movie">
+    </div>
+    <div class="d-flex justify-content-center  p-1 mb-5">
+        <ul class="list-unstyled w-25  overflow-auto js-search-list  bg-light" style="max-height: 230px; position: absolute; top: 75%;">
+            <li></li>
+        </ul>
+    </div>
+</form>
+
+<main>
+    <div class="container">
+        <div class="js-cards-wrapper d-flex flex-wrap">
+
+        </div>
+    </div>
+</main>
+
+
+
+<template id="card-template">
+    <div class=" m-2 rounded-3 bg-light border border-secondary" style="width: 300px">
+        <img src="" class="card-img-top js-card-img" alt="">
+        <div class="card-body">
+          <h5 class="card-title m-0 js-movie-title">Card title</h5>
+          <p class="card-text m-0 js-movie-imdb text-danger">Movie name</p>
+          <p class="card-text m-0 js-movie-language">language</p>
+          <p class="card-text m-0 mb-2 js-movie-year"></p>
+          <a href="index.html?id=5" class="btn btn-danger  w-50 js-watch-movies" style="margin-left: auto; margin-right: auto; display: block;">watch</a>
+        </div>
+      </div>
+</template>
+
+    <script src="./movies/movies.js"></script>
+    <script src="./movies/utility.js"></script>
+    <script src="./movies/func.js"></script>
+    <script src="./movies/listFunc.js"></script>
+</body>
+</html>

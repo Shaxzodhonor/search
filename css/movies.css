@@ -7,6 +7,18 @@
         height: 100%;
         background-color: rgba(247, 243, 243, 0.1);
     }
+    .js-move-card {
+        transition: all 0.4s ease;
+    }
     .js-move-card:hover {
-        box-shadow: -3px -3px 10px, 3px 3px 10px;
+        box-shadow: -3px -3px 6px, 3px 3px 10px;
+        cursor: pointer;
+    }
+    .srLiClass {
+        transition: all 0.3s ease;
+        text-overflow: ellipsis;
+    }
+    .srLiClass:hover {
+        background-color: rgb(221, 155, 33);
+        cursor: pointer;
     }

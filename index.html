@@ -8,15 +8,28 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/movies.css">
 </head>
-<body>
-    <h1 class="h1 text-center  bg-danger mb-3 p-3"><span class="text-warning">SHAX TuBE</span> Movies</h1>
+<body class="bg-light">
+    <div class="container">
+        <a href="list.html" class="btn btn-danger btn-lg my-4"> Watch list of movies</a></div>
+
+        <h1 class="h1 text-center shadow bg-danger mb-3 p-3"><span class="text-warning">SHAX TuBe</span> Movies</h1>
+
+        <div class="row">
+            <div class="col-8">
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+
     <div class="container-lg">
         <div class="row">
             <div class="col-8  border-end border-3">
                 <form action="" method="POST" class="js-form">
-                    <div class="mb-4">
-                        <input class="w-50 rounded-pill p-3 js-search" type="search" name="search_movie" id="search-movie-id" placeholder="search" autocomplete="off">
+                    <div class="mb-4 input-group w-75">
+                        <input class="p-3 js-search form-control" type="search" name="search_movie" id="search-movie-id" placeholder="search" autocomplete="off" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-danger" type="submit" id="button-addon2"> SUBMIT </button>
                     </div>
+                    
                 </form>
                 <div>
                     <iframe class="full-screen-iframe"  width="700" height="400" src="https://www.youtube.com/embed/8FSF-Ua1S_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -32,17 +45,18 @@
                     <div class="js-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus repellat accusamus saepe voluptatum sequi expedita et facilis. Asperiores doloribus fugiat enim delectus necessitatibus illum ipsam nesciunt odio quam explicabo!</div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-3 mb-5">
                 <div class="js-wrapper">
                 </div>
+                <a href="list.html" class="btn btn-lg btn-danger w-100">Watch list of movies</a>
             </div>
         </div>
     </div>
 
 
 
-    <script src="./js/movies.js"></script>
-    <script src="./js/utility.js"></script>
-    <script src="./js/moviesFunc.js"></script>
+    <script src="./movies/movies.js"></script>
+    <script src="./movies/utility.js"></script>
+    <script src="./movies/moviesFunc.js"></script>
 </body>
 </html>
