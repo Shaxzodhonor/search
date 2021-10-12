@@ -8,7 +8,7 @@ var createCard = function (arr){
     $_('.js-movie-imdb', newCard).textContent = "IMDB Rating : " + arr.imdbRating;
     $_('.js-movie-language', newCard).textContent = "Language : " + arr.language;
     $_('.js-movie-year', newCard).textContent = "Year : " + arr.year;
-    $_('.js-watch-movies', newCard).href = "index.html?id=" + arr.id;
+    $_('.js-watch-movies', newCard).href = "index2.html?id=" + arr.id;
     
     return newCard;
 }
