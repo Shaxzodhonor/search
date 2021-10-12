@@ -73,8 +73,8 @@ sortZA.addEventListener('click', function(){
     sortZAFunc();
 })
 sortImdb.addEventListener('click', function(){
-    
     sortIMDBFunc();
+    
 })
 sortYearStart.addEventListener('click', function(){
     sortYSFunc();

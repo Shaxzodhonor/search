@@ -50,6 +50,7 @@ var renderFunc  = function(arr) {
 // ============================
 var nextFunc = function(){
     count++;
+    window.scrollTo(0, 50);
     renderFunc(anyArr)
 }
 var prewFunc = function(){
@@ -57,6 +58,7 @@ var prewFunc = function(){
         return
     }
     count--;
+    window.scrollTo(0, 50); 
     renderFunc(anyArr)
 }
 
