@@ -5,12 +5,14 @@ var cardsWrapper = $_(".js-cards-wrapper");
 var elSearchList = $_(".js-search-list");
 var searchArr = []; 
 
-
+var sortAZ = $_(".js-sort-AZ");
+var sortZA= $_(".js-sort-ZA");
+var sortYearStart= $_(".js-sort-year-start");
+var sortYearEnd = $_(".js-sort-year-end");
+var sortImdb = $_(".js-sort-imdb");
 
 
 renderFunc(normalizedMovies);
-
-
 
 elSearchInput.addEventListener('input', function(){
         
@@ -18,11 +20,12 @@ elSearchInput.addEventListener('input', function(){
         
         elSearchInput.classList.remove("is-invalid");
         elSearchList.classList.remove("d-none");
+        
         if (searchText.length == 1) {
-            
             elSearchList.classList.add("d-none");
             return;
         }
+
         if (searchText.length == 0) {
             
            elSearchList.classList.add("d-none");
@@ -35,6 +38,7 @@ elSearchInput.addEventListener('input', function(){
         return movie.title.match(searchReg);
         })
         
+        
         if (searchArr.length == 0) {
             elSearchList.classList.add("d-none");
             cardsWrapper.innerHTML = "<div class='h3 text-center bg-danger'> 404 NOT FOUND </div>";
@@ -44,9 +48,8 @@ elSearchInput.addEventListener('input', function(){
         searchArr.forEach(function(movie, index){
            var newItem = createElement('li', 'border ps-3 overflow-hidden w-100 srLiClass', movie.title, elSearchList);
            
-          
-           console.log(searchArr.length);
            newItem.addEventListener("click", function(){
+              
                renderFunc(searchArr.slice(index, index + 1 ));
                elSearchList.classList.add("d-none");
            })
@@ -56,6 +59,26 @@ elSearchInput.addEventListener('input', function(){
                evt.preventDefault();
                elSearchList.classList.add("d-none");
            })
+        
         renderFunc(searchArr);
         
+})
+
+sortAZ.addEventListener('click', function(){
+    
+    sortAZFunc();
+})
+sortZA.addEventListener('click', function(){
+    
+    sortZAFunc();
+})
+sortImdb.addEventListener('click', function(){
+    
+    sortIMDBFunc();
+})
+sortYearStart.addEventListener('click', function(){
+    sortYSFunc();
+})
+sortYearEnd.addEventListener('click', function(){
+    sortYEFunc();
 })

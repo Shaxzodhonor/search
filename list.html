@@ -8,26 +8,44 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/movies.css">
 </head>
-<body>
+<body class="bg-light">
     <h1 class="bg-danger text-center p-4">Watch list of movies</h1>
 
 
 
 <form action="" class="js-form-list" style="position: relative;">
-    <div class="d-flex justify-content-center bg-secondary p-3">
-        <input type="search" class="js-search-input form-control w-25 rounded-3" placeholder="search movie">
-    </div>
-    <div class="d-flex justify-content-center  p-1 mb-5">
-        <ul class="list-unstyled w-25  overflow-auto js-search-list  bg-light" style="max-height: 230px; position: absolute; top: 75%;">
+    
+    <div class="bg-secondary p-3 d-flex justify-content-center">
+        <input type="search" class="js-search-input rounded-0 form-control w-25" placeholder="search movie">
+        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sort by... </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item js-sort-AZ" href="#">Sort A-Z</a></li>
+            <li><a class="dropdown-item js-sort-ZA" href="#">Sort Z_A</a></li>
+            <li><a class="dropdown-item js-sort-imdb" href="#">Sort IMDB Rating</a></li>
+            <li><a class="dropdown-item js-sort-year-start" href="#">Sort year start</a></li>
+            <li><a class="dropdown-item js-sort-year-end" href="#">Sort year end</a></li>
+          
+        </ul>
+      </div>
+
+    <div class="d-flex justify-content-center  p-1">
+        <ul class="list-unstyled overflow-auto js-search-list  bg-light" style="max-height: 230px; width: 345px; position: absolute; top: 75%; left: calc(50% - 217px);">
             <li></li>
         </ul>
     </div>
 </form>
 
 <main>
-    <div class="container">
+    <div class="container bg-white">
+        <div class="d-flex justify-content-between bg-secondary p-2">
+            <button class="form-control btn btn-danger w-25" type="button" onclick="prewFunc();">prew page</button>
+            <button class="form-control btn btn-danger w-25" type="button" onclick="nextFunc();">next page</button>
+        </div>
         <div class="js-cards-wrapper d-flex flex-wrap justify-content-center">
-
+        </div>
+        <div class="d-flex justify-content-between mb-5 bg-secondary p-4">
+            <button class="form-control btn btn-danger w-25" type="button" onclick="prewFunc();">prew</button>
+            <button class="form-control btn btn-danger w-25" type="button" onclick="nextFunc();">next</button>
         </div>
     </div>
 </main>
@@ -46,7 +64,7 @@
         </div>
       </div>
 </template>
-
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./movies/movies.js"></script>
     <script src="./movies/utility.js"></script>
     <script src="./movies/func.js"></script>
